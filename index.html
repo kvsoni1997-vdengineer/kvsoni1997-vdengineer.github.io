@@ -260,6 +260,86 @@ footer{border-top:2px solid var(--ink);padding:30px 0;font-family:var(--font-mon
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,170,110,.6)}70%{box-shadow:0 0 0 8px rgba(31,170,110,0)}100%{box-shadow:0 0 0 0 rgba(31,170,110,0)}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .reveal.in{opacity:1;transform:none}
+
+/* ===== Experience & Education timeline ===== */
+  --bg:#f4f3ee; --ink:#15161a; --paper:#ffffff; --line:#23242a; --grid:#d7d6cc;
+  --blue:#1b6cff; --orange:#ff5722; --yellow:#ffd23f; --green:#1faa6e; --muted:#6a6b72;
+  --font-display:'Archivo',sans-serif; --font-mono:'Space Mono',monospace;
+}
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:32px 32px;padding:40px 0 80px}
+.sec-num{font-family:var(--font-mono);font-size:.95rem;font-weight:700;color:var(--orange)}
+#experience .sec-sub{font-family:var(--font-mono);font-size:.82rem;color:var(--muted);margin-bottom:34px;letter-spacing:.02em}
+.tl-heads{display:grid;grid-template-columns:1fr 84px 1fr;margin-bottom:10px}
+.tl-heads .h{font-family:var(--font-mono);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.tl-heads .work{text-align:right;color:var(--blue)}
+.tl-heads .axis{text-align:center;color:var(--muted);font-size:.68rem;align-self:center}
+.tl-heads .edu{text-align:left;color:var(--orange)}
+.tl{position:relative;display:grid;grid-template-columns:1fr 84px 1fr}
+.tl-col{position:relative}
+.tl-axis{position:relative}
+.tl-axis::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--ink);transform:translateX(-50%)}
+.year{position:absolute;left:0;right:0;display:flex;align-items:center;justify-content:center;transform:translateY(-50%)}
+.year span{font-family:var(--font-mono);font-size:.72rem;font-weight:700;color:var(--ink);background:var(--bg);padding:2px 6px;z-index:2;border:1.5px solid var(--ink);border-radius:3px}
+.year::before{content:"";position:absolute;left:0;right:0;height:1px;background:var(--grid);z-index:0}
+.cap{position:absolute;border:2px solid var(--ink);border-radius:9px;box-shadow:3px 3px 0 var(--ink);
+  padding:10px 13px;overflow:hidden;cursor:default;display:flex;flex-direction:column;justify-content:center;
+  transition:transform .16s ease,box-shadow .16s ease}
+.cap:hover{transform:translateY(-2px);box-shadow:5px 5px 0 var(--ink);z-index:6}
+.tl-col.work .cap{background:linear-gradient(150deg,#eaf1ff,#dbe8ff)}
+.tl-col.edu .cap{background:linear-gradient(150deg,#fff0ec,#ffe2d9)}
+.tl-col.edu .cap.proj{background:repeating-linear-gradient(135deg,#fff6f3,#fff6f3 7px,#ffeee9 7px,#ffeee9 14px)}
+.cap::after{content:"";position:absolute;top:50%;transform:translateY(-50%);width:14px;height:2px;background:var(--ink)}
+.tl-col.work .cap::after{right:-14px}
+.tl-col.edu .cap::after{left:-14px}
+.cap.sublane::after{display:none}
+.cap.floatcap{box-shadow:4px 4px 0 var(--ink);border-width:2px;padding:8px 12px}
+.cap.floatcap .tag{display:none}
+.cap.floatcap .dur{display:block;margin-top:4px}
+.cap.floatcap .role{font-size:.8rem}
+.cap.floatcap::after{display:none}
+.tl-col.work .cap.floatcap{background:linear-gradient(150deg,#dce8ff,#c5d9ff)}
+.cap .tag{font-family:var(--font-mono);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:3px}
+.tl-col.work .cap .tag{color:var(--blue);opacity:.8}
+.tl-col.edu .cap .tag{color:var(--orange);opacity:.8}
+.cap .role{font-weight:700;font-size:.9rem;line-height:1.2;letter-spacing:-.01em}
+.cap .org{font-size:.76rem;color:var(--muted);margin-top:3px;line-height:1.25}
+.cap .dur{font-family:var(--font-mono);font-size:.64rem;font-weight:700;margin-top:5px;letter-spacing:.03em;opacity:.85}
+.tl-col.work .cap .dur{color:var(--blue)}
+.tl-col.edu .cap .dur{color:var(--orange)}
+.cap.compact .org{display:none}
+.cap.compact{padding:7px 11px}
+.cap.compact .role{font-size:.82rem}
+.cap.tiny .role{font-size:.74rem}
+.cap.tiny .tag{display:none}
+.cap.tiny{padding:6px 10px}
+.pt{margin-top:30px;border-top:2px dashed var(--grid);padding-top:20px}
+.pt h3{font-family:var(--font-mono);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.pt-rows{display:flex;flex-direction:column;gap:7px}
+.pt-row{display:flex;align-items:baseline;gap:12px;font-size:.86rem;color:#3a3b42}
+.pt-row .pt-dur{font-family:var(--font-mono);font-size:.7rem;color:var(--muted);min-width:120px;flex-shrink:0}
+.pt-row .pt-role{font-weight:600}
+.pt-row .pt-org{color:var(--muted)}
+.pt-note{font-size:.72rem;color:var(--muted);font-style:italic;margin-top:10px}
+@media(max-width:720px){
+  .tl-heads,.tl-axis,.desktop-only{display:none}
+  .tl{display:block}
+  .m-list{position:relative;padding-left:30px}
+  .m-list::before{content:"";position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:var(--ink)}
+  .m-item{position:relative;border:2px solid var(--ink);border-radius:9px;box-shadow:3px 3px 0 var(--ink);padding:11px 13px;margin-bottom:15px}
+  .m-item::before{content:"";position:absolute;left:-26px;top:16px;width:11px;height:11px;border-radius:50%;border:2px solid var(--ink);background:var(--bg)}
+  .m-item.work{background:linear-gradient(150deg,#eaf1ff,#dbe8ff)}
+  .m-item.work::before{background:var(--blue)}
+  .m-item.edu{background:linear-gradient(150deg,#fff0ec,#ffe2d9)}
+  .m-item.edu::before{background:var(--orange)}
+  .m-item.proj{background:repeating-linear-gradient(135deg,#fff6f3,#fff6f3 7px,#ffeee9 7px,#ffeee9 14px)}
+  .m-item .role{font-weight:700;font-size:.93rem;line-height:1.2}
+  .m-item .org{font-size:.8rem;color:var(--muted);margin-top:3px}
+  .m-item .dur{font-family:var(--font-mono);font-size:.66rem;font-weight:700;margin-top:5px}
+  .m-item.work .dur{color:var(--blue)} .m-item.edu .dur{color:var(--orange)}
+  .m-item .tag{font-family:var(--font-mono);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.6;display:block;margin-bottom:2px}
+}
+@media(min-width:721px){ .mobile-only{display:none} }
 </style>
 </head>
 <body>
@@ -575,15 +655,32 @@ footer{border-top:2px solid var(--ink);padding:30px 0;font-family:var(--font-mon
 
 <section id="experience">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">04</span><h2>Experience</h2><span class="sec-line"></span></div>
-    <div class="timeline">
-      <div class="tl-item reveal"><div class="when">06/2024 — 03/2026</div><h4>Technical Lead / Senior Manager — Vehicle Engineering (LCV &amp; HCV)</h4><div class="org">Binani Technologies India Pvt. Ltd. · Pune, India</div><p>Led the product lifecycle for 3.5-Ton and 9-Ton battery-electric commercial vehicle platforms using SolidWorks and Ansys. Owned FRP body, chassis and battery-enclosure design across an 8-month development cycle, coordinating a cross-functional team of 6 engineers across systems design, high-fidelity simulation, mass-manufacturability and prototype validation.</p></div>
-      <div class="tl-item reveal"><div class="when">12/2021 — 01/2023</div><h4>Master Thesis Engineer</h4><div class="org">HAN Automotive Research · Arnhem, Netherlands</div><p>Developed a MATLAB/Simulink energy and total-cost-of-ownership tool for high-capacity vehicles, validated to 92% accuracy against VECTO, owning the end-to-end technical lifecycle under expert research supervision.</p></div>
-      <div class="tl-item reveal"><div class="when">06/2018 — 07/2019</div><h4>Production Officer (Graduate Apprentice Trainee)</h4><div class="org">Mahindra Vehicle Manufacturers Ltd. · Pune, India</div><p>Managed assembly throughput for international LHD/RHD SUV variants (XUV500, KUV100), leading a team of 70–120 operators on the Trim line and applying lean and six-sigma techniques for chassis-to-body integration.</p></div>
-      <div class="tl-item reveal"><div class="when">06/2015 — 04/2018</div><h4>Vehicle Dynamics Lead — Formula Student</h4><div class="org">Camber Racing, SRMIST · Chennai, India</div><p>Tire-dynamics and steering engineer, ultimately Technical Head of the Vehicle Dynamics department. Developed, tuned and tested three formula-style prototypes, securing podiums in India and competing at FS Germany.</p></div>
-      <div class="tl-item reveal"><div class="when">09/2019 — 01/2023</div><h4>European Master of Automotive Engineering (Dual Degree, Ing. &amp; MSc.)</h4><div class="org">Czech Technical University, Prague &amp; HAN University, Arnhem</div><p>Specialization in Vehicle Dynamics and Clean Driveline Control Systems.</p></div>
-      <div class="tl-item reveal"><div class="when">2014 — 2018</div><h4>B.Tech. in Automotive Engineering</h4><div class="org">SRM Institute of Science and Technology · Chennai, India</div><p>Foundation in automotive design, dynamics and systems engineering.</p></div>
+    <div class="sec-head reveal"><span class="sec-num">04</span><h2>Experience &amp; Education</h2><span class="sec-line"></span></div>
+    <div class="sec-sub reveal">Work and study on a shared time axis. Capsule length reflects duration.</div>
+    <div class="desktop-only">
+    <div class="tl-heads">
+      <div class="h work">Experience</div>
+      <div class="h axis">YEAR</div>
+      <div class="h edu">Education</div>
     </div>
+    <div class="tl" id="tl">
+      <div class="tl-col work" id="colWork"></div>
+      <div class="tl-axis" id="colAxis"></div>
+      <div class="tl-col edu" id="colEdu"></div>
+    </div>
+  </div>
+
+  <div class="mobile-only"><div class="m-list" id="mList"></div></div>
+
+  <div class="pt">
+    <h3>Part-time Work · Netherlands</h3>
+    <div class="pt-rows" id="ptRows">
+      <div class="pt-row"><span class="pt-dur">Sep 2023 — Jan 2024</span><span class="pt-role">Delivery Partner</span><span class="pt-org">· Flink SE, Arnhem</span></div>
+      <div class="pt-row"><span class="pt-dur">Mar 2023 — May 2023</span><span class="pt-role">Logistics Employee</span><span class="pt-org">· A.S. Watson B.V., Arnhem</span></div>
+      <div class="pt-row"><span class="pt-dur">Jul 2021 — Jan 2022</span><span class="pt-role">Logistics Employee</span><span class="pt-org">· ALSO International B.V., Wijchen</span></div>
+    </div>
+    <div class="pt-note">Part-time roles held while living in the Netherlands.</div>
+  </div>
   </div>
 </section>
 
@@ -797,6 +894,85 @@ document.getElementById('sendBtn').addEventListener('click',()=>{
     else if(e.key==='ArrowRight')next();
     else if(e.key==='ArrowLeft')prev();
   });
+})();
+
+/* ===== Experience & Education timeline ===== */
+(function(){
+
+const WORK = [
+  { role:"Technical Lead / Senior Manager — Vehicle Engineering", org:"Binani Technologies · Pune", start:2024.42, end:2026.25, durTxt:"Jun 2024 — Mar 2026", lane:0 },
+  { role:"Master Thesis Engineer", org:"HAN Automotive Research · Arnhem", start:2021.92, end:2023.17, durTxt:"Dec 2021 — Mar 2023", lane:0 },
+  { role:"Production Officer (GAT)", org:"Mahindra Vehicle Mfg. · Pune", start:2018.42, end:2019.58, durTxt:"Jun 2018 — Jul 2019", lane:0 },
+  { role:"Vehicle Dynamics Lead — Formula Student", org:"Camber Racing, SRMIST · Chennai", start:2015.42, end:2018.25, durTxt:"Jun 2015 — Mar 2018", lane:0 },
+  { role:"Bachelor Thesis Engineer", org:"Blue Binaries Engineering · Chennai", start:2017.92, end:2018.42, durTxt:"Dec 2017 — May 2018", lane:3 },
+];
+const EDU = [
+  { role:"(Ing.)(M.Sc.) Automotive Engineering — Vehicle Dynamics & Clean Driveline Control Systems", org:"CTU Prague & HAN Arnhem (Dual Degree)", start:2019.67, end:2023.25, durTxt:"Sep 2019 — Mar 2023", lane:0 },
+  { role:"B.Tech. Automotive Engineering", org:"SRM Institute of Science & Tech · Chennai", start:2014.25, end:2018.25, durTxt:"Apr 2014 — Mar 2018", lane:0 },
+];
+
+const Y_START=2014, Y_END=2026.4, PX_PER_YEAR=86, TOP_PAD=16;
+const totalH=(Y_END-Y_START)*PX_PER_YEAR+TOP_PAD*2;
+// Inverted axis: most-recent year at top, oldest at bottom.
+const yToPx=y=>TOP_PAD+(Y_END-y)*PX_PER_YEAR;
+
+const colWork=document.getElementById('colWork'), colAxis=document.getElementById('colAxis'), colEdu=document.getElementById('colEdu');
+[colWork,colAxis,colEdu].forEach(c=>c.style.height=totalH+'px');
+document.getElementById('tl').style.minHeight=totalH+'px';
+
+for(let y=2014;y<=2026;y++){
+  const t=document.createElement('div'); t.className='year'; t.style.top=yToPx(y)+'px';
+  t.innerHTML='<span>'+y+'</span>'; colAxis.appendChild(t);
+}
+
+function place(item, kind){
+  const top=yToPx(item.end), h=(item.end-item.start)*PX_PER_YEAR;
+  const el=document.createElement('div');
+  let cls='cap';
+  if(h<58) cls+=' compact';
+  if(h<46) cls+=' tiny';
+  if(item.proj) cls+=' proj';
+  if(item.lane>0) cls+=' sublane';
+  el.className=cls;
+  el.style.top=top+'px'; el.style.height=(h-7)+'px';
+  if(item.lane===3){
+    // floating overlap: readable height, nudged DOWN to leave a clear gap below the capsule above
+    const fixedH=62;
+    el.style.height=fixedH+'px';
+    el.style.top=(top + 12)+'px';
+  }
+
+  // lane 0 = full width, connects to spine.
+  // lanes 1 & 2 = two parallel half-width sub-lanes for concurrent items.
+  // lane 3 = compact floating capsule overlapping a full-width parent's outer edge.
+  let width, edge;
+  if(item.lane===0){ width='calc(100% - 18px)'; edge='0'; }
+  else if(item.lane===1){ width='calc(49% - 12px)'; edge='0'; }
+  else if(item.lane===2){ width='calc(49% - 12px)'; edge='calc(51% + 0px)'; }
+  else { width='calc(66% - 12px)'; edge='calc(28% + 0px)'; }   // lane 3: floats over parent, outer-offset
+  el.style.width=width;
+  if(kind==='work'){ el.style.right=edge; } else { el.style.left=edge; }
+  if(item.lane===3){ el.style.zIndex='4'; el.classList.remove('sublane'); el.classList.add('floatcap'); }
+
+  el.innerHTML=(item.proj?'<div class="tag">PROJECT</div>':'')+
+    '<div class="role">'+item.role+'</div>'+(item.org?'<div class="org">'+item.org+'</div>':'')+
+    '<div class="dur">'+item.durTxt+'</div>';
+  (kind==='work'?colWork:colEdu).appendChild(el);
+}
+WORK.forEach(it=>place(it,'work'));
+EDU.forEach(it=>place(it,'edu'));
+
+const merged=[...WORK.map(x=>({...x,kind:'work'})),...EDU.map(x=>({...x,kind:'edu'}))].sort((a,b)=>b.start-a.start);
+const mList=document.getElementById('mList');
+merged.forEach(it=>{
+  const el=document.createElement('div');
+  el.className='m-item '+(it.proj?'edu proj':it.kind);
+  el.innerHTML=(it.proj?'<span class="tag">Project</span>':'')+
+    '<div class="role">'+it.role+'</div>'+(it.org?'<div class="org">'+it.org+'</div>':'')+
+    '<div class="dur">'+it.durTxt+'</div>';
+  mList.appendChild(el);
+});
+
 })();
 </script>
 </body>
