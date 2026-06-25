@@ -176,7 +176,9 @@ section{padding:74px 0;position:relative}
 .lb-dot{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink);background:var(--bg);cursor:pointer;padding:0;transition:background .2s}
 .lb-dot.active{background:var(--blue)}
 .lb-count{font-family:var(--font-mono);font-size:.78rem;color:#6a6b72;margin-left:auto;position:absolute;right:20px}
-@media(max-width:760px){.lb-arrow{width:38px;height:38px}.lb-stage img{max-height:55vh}}
+.lb-note{font-size:.76rem;font-style:italic;color:#8a8b92;position:absolute;left:20px;max-width:60%;text-align:left;line-height:1.3}
+.lb-note:empty{display:none}
+@media(max-width:760px){.lb-arrow{width:38px;height:38px}.lb-stage img{max-height:55vh}.lb-note{position:static;max-width:100%;text-align:center;margin-top:6px;order:3;flex-basis:100%}.lb-count{position:static;margin-left:0}}
 .proj:nth-child(4n+1) .proj-top{background:linear-gradient(135deg,var(--blue),#0a3fa8)}
 .proj:nth-child(4n+2) .proj-top{background:linear-gradient(135deg,var(--orange),#c13a12)}
 .proj:nth-child(4n+3) .proj-top{background:linear-gradient(135deg,var(--green),#0d6b43)}
@@ -301,12 +303,12 @@ footer{border-top:2px solid var(--ink);padding:30px 0;font-family:var(--font-mon
     <svg viewBox="0 0 640 720" xmlns="http://www.w3.org/2000/svg">
 
   <!-- top mount (fixed) -->
-  <rect x="286" y="30" width="68" height="16" rx="3" fill="#1b2a52" stroke="#141414" stroke-width="4"/>
-  <circle cx="300" cy="38" r="3.5" fill="#141414"/>
-  <circle cx="340" cy="38" r="3.5" fill="#141414"/>
-  <rect x="292" y="56" width="56" height="11" rx="2" fill="#1b2a52" stroke="#141414" stroke-width="3"/>
+  <rect x="286" y="30" width="68" height="16" rx="3" fill="#1b2a52" stroke="#15161a" stroke-width="4"/>
+  <circle cx="300" cy="38" r="3.5" fill="#15161a"/>
+  <circle cx="340" cy="38" r="3.5" fill="#15161a"/>
+  <rect x="292" y="56" width="56" height="11" rx="2" fill="#1b2a52" stroke="#15161a" stroke-width="3"/>
   <!-- upper damper tube (fixed, inside spring) -->
-  <rect x="313" y="46" width="14" height="120" rx="4" fill="#1b2a52" stroke="#141414" stroke-width="3"/>
+  <rect x="313" y="46" width="14" height="120" rx="4" fill="#1b2a52" stroke="#15161a" stroke-width="3"/>
   <rect x="316" y="50" width="4" height="110" rx="2" fill="#2c4178" opacity="0.7"/>
   <!-- red coil spring, anchored at top, drawn over damper -->
   <g class="spring-grp">
@@ -318,9 +320,9 @@ footer{border-top:2px solid var(--ink);padding:30px 0;font-family:var(--font-mon
 
 
   <g class="lower-bob">
-    <rect x="315" y="160" width="10" height="60" rx="3" fill="#2c4178" stroke="#141414" stroke-width="3"/>
-    <rect x="292" y="206" width="56" height="11" rx="2" fill="#1b2a52" stroke="#141414" stroke-width="3"/>
-    <rect x="310" y="216" width="20" height="30" rx="3" fill="#1b2a52" stroke="#141414" stroke-width="3"/>
+    <rect x="315" y="160" width="10" height="60" rx="3" fill="#2c4178" stroke="#15161a" stroke-width="3"/>
+    <rect x="292" y="206" width="56" height="11" rx="2" fill="#1b2a52" stroke="#15161a" stroke-width="3"/>
+    <rect x="310" y="216" width="20" height="30" rx="3" fill="#1b2a52" stroke="#15161a" stroke-width="3"/>
     <path d="M312 244 L296 252 M328 244 L344 252" stroke="#1b2a52" stroke-width="11" stroke-linecap="round"/>
     <g transform="translate(0,220)">
       <g class="wheel-spin">
@@ -328,71 +330,71 @@ footer{border-top:2px solid var(--ink);padding:30px 0;font-family:var(--font-mon
   <g>
     <g>
       <g>
-        <circle cx="320" cy="240" r="226" fill="none" stroke="#141414" stroke-width="4"></circle>
-        <circle cx="320" cy="240" r="190" fill="none" stroke="#141414" stroke-width="6"></circle>
-        <circle cx="320" cy="240" r="170" fill="none" stroke="#9c6628" stroke-width="3"></circle>
-        <circle cx="320" cy="240" r="160" fill="none" stroke="#141414" stroke-width="4"></circle>
-        <circle cx="320" cy="240" r="66" fill="#c6863c" stroke="#141414" stroke-width="4"></circle>
-        <circle cx="320" cy="240" r="24" fill="#ffffff" stroke="#141414" stroke-width="4"></circle>
+        <circle cx="320" cy="240" r="226" fill="none" stroke="#15161a" stroke-width="4"></circle>
+        <circle cx="320" cy="240" r="190" fill="none" stroke="#15161a" stroke-width="6"></circle>
+        <circle cx="320" cy="240" r="170" fill="none" stroke="#3a4150" stroke-width="3"></circle>
+        <circle cx="320" cy="240" r="160" fill="none" stroke="#15161a" stroke-width="4"></circle>
+        <circle cx="320" cy="240" r="66" fill="#ff5722" stroke="#15161a" stroke-width="4"></circle>
+        <circle cx="320" cy="240" r="24" fill="#ffffff" stroke="#15161a" stroke-width="4"></circle>
       </g>
-      <circle cx="320" cy="240" r="73" stroke="#e0a85c" stroke-width="10" fill="none"></circle>
-      <circle cx="320" cy="240" r="73" stroke="#e0a85c" stroke-width="10" fill="none" transform="rotate(72 320 240)"></circle>
-      <circle cx="320" cy="240" r="73" stroke="#e0a85c" stroke-width="10" fill="none" transform="rotate(144 320 240)"></circle>
-      <circle cx="320" cy="240" r="73" stroke="#e0a85c" stroke-width="10" fill="none" transform="rotate(216 320 240)"></circle>
-      <circle cx="320" cy="240" r="73" stroke="#e0a85c" stroke-width="10" fill="none" transform="rotate(288 320 240)"></circle>
-      <circle cx="320" cy="240" r="166" stroke="#9c6628" stroke-width="5" fill="none"></circle>
-      <circle cx="320" cy="240" r="166" stroke="#9c6628" stroke-width="5" fill="none" transform="rotate(72 320 240)"></circle>
-      <circle cx="320" cy="240" r="166" stroke="#9c6628" stroke-width="5" fill="none" transform="rotate(144 320 240)"></circle>
-      <circle cx="320" cy="240" r="166" stroke="#9c6628" stroke-width="5" fill="none" transform="rotate(216 320 240)"></circle>
-      <circle cx="320" cy="240" r="166" stroke="#9c6628" stroke-width="5" fill="none" transform="rotate(288 320 240)"></circle>
-      <line x1="313" y1="60" x2="297" y2="169" stroke="#e0a85c" stroke-width="15" stroke-linecap="round"></line>
-      <line x1="313" y1="60" x2="297" y2="169" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(72 320 240)"></line>
-      <line x1="313" y1="60" x2="297" y2="169" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(144 320 240)"></line>
-      <line x1="313" y1="60" x2="297" y2="169" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(216 320 240)"></line>
-      <line x1="313" y1="60" x2="297" y2="169" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(288 320 240)"></line>
-      <line x1="326" y1="60" x2="340" y2="166" stroke="#e0a85c" stroke-width="15" stroke-linecap="round"></line>
-      <line x1="326" y1="60" x2="340" y2="166" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(72 320 240)"></line>
-      <line x1="326" y1="60" x2="340" y2="166" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(144 320 240)"></line>
-      <line x1="326" y1="60" x2="340" y2="166" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(216 320 240)"></line>
-      <line x1="326" y1="60" x2="340" y2="166" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(288 320 240)"></line>
-      <line x1="319" y1="64" x2="308" y2="157" stroke="#e0a85c" stroke-width="15" stroke-linecap="round"></line>
-      <line x1="319" y1="64" x2="308" y2="157" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(72 320 240)"></line>
-      <line x1="319" y1="64" x2="308" y2="157" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(144 320 240)"></line>
-      <line x1="319" y1="64" x2="308" y2="157" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(216 320 240)"></line>
-      <line x1="319" y1="64" x2="308" y2="157" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(288 320 240)"></line>
-      <line x1="320" y1="78" x2="319" y2="157" stroke="#e0a85c" stroke-width="15" stroke-linecap="round"></line>
-      <line x1="320" y1="78" x2="319" y2="157" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(72 320 240)"></line>
-      <line x1="320" y1="78" x2="319" y2="157" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(144 320 240)"></line>
-      <line x1="320" y1="78" x2="319" y2="157" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(216 320 240)"></line>
-      <line x1="320" y1="78" x2="319" y2="157" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(288 320 240)"></line>
-      <line x1="320" y1="79" x2="330" y2="161" stroke="#e0a85c" stroke-width="15" stroke-linecap="round"></line>
-      <line x1="320" y1="79" x2="330" y2="161" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(72 320 240)"></line>
-      <line x1="320" y1="79" x2="330" y2="161" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(144 320 240)"></line>
-      <line x1="320" y1="79" x2="330" y2="161" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(216 320 240)"></line>
-      <line x1="320" y1="79" x2="330" y2="161" stroke="#e0a85c" stroke-width="15" stroke-linecap="round" transform="rotate(288 320 240)"></line>
-      <line x1="304" y1="71" x2="291" y2="168" stroke="#9c6628" stroke-width="4" stroke-linecap="round"></line>
-      <line x1="304" y1="71" x2="291" y2="168" stroke="#9c6628" stroke-width="4" stroke-linecap="round" transform="rotate(72 320 240)"></line>
-      <line x1="304" y1="71" x2="291" y2="168" stroke="#9c6628" stroke-width="4" stroke-linecap="round" transform="rotate(144 320 240)"></line>
-      <line x1="304" y1="71" x2="291" y2="168" stroke="#9c6628" stroke-width="4" stroke-linecap="round" transform="rotate(216 320 240)"></line>
-      <line x1="304" y1="71" x2="291" y2="168" stroke="#9c6628" stroke-width="4" stroke-linecap="round" transform="rotate(288 320 240)"></line>
-      <line x1="335" y1="70" x2="349" y2="168" stroke="#9c6628" stroke-width="4" stroke-linecap="round"></line>
-      <line x1="335" y1="70" x2="349" y2="168" stroke="#9c6628" stroke-width="4" stroke-linecap="round" transform="rotate(72 320 240)"></line>
-      <line x1="335" y1="70" x2="349" y2="168" stroke="#9c6628" stroke-width="4" stroke-linecap="round" transform="rotate(144 320 240)"></line>
-      <line x1="335" y1="70" x2="349" y2="168" stroke="#9c6628" stroke-width="4" stroke-linecap="round" transform="rotate(216 320 240)"></line>
-      <line x1="335" y1="70" x2="349" y2="168" stroke="#9c6628" stroke-width="4" stroke-linecap="round" transform="rotate(288 320 240)"></line>
-      <circle cx="320" cy="240" r="70" stroke="#9c6628" stroke-width="6" fill="none"></circle>
-      <circle cx="320" cy="240" r="70" stroke="#9c6628" stroke-width="6" fill="none" transform="rotate(72 320 240)"></circle>
-      <circle cx="320" cy="240" r="70" stroke="#9c6628" stroke-width="6" fill="none" transform="rotate(144 320 240)"></circle>
-      <circle cx="320" cy="240" r="70" stroke="#9c6628" stroke-width="6" fill="none" transform="rotate(216 320 240)"></circle>
-      <circle cx="320" cy="240" r="70" stroke="#9c6628" stroke-width="6" fill="none" transform="rotate(288 320 240)"></circle>
-      <circle cx="320" cy="197" r="7" stroke="#141414" stroke-width="6" fill="none"></circle>
-      <circle cx="320" cy="197" r="7" stroke="#141414" stroke-width="6" fill="none" transform="rotate(72 320 240)"></circle>
-      <circle cx="320" cy="197" r="7" stroke="#141414" stroke-width="6" fill="none" transform="rotate(144 320 240)"></circle>
-      <circle cx="320" cy="197" r="7" stroke="#141414" stroke-width="6" fill="none" transform="rotate(216 320 240)"></circle>
-      <circle cx="320" cy="197" r="7" stroke="#141414" stroke-width="6" fill="none" transform="rotate(288 320 240)"></circle>
+      <circle cx="320" cy="240" r="73" stroke="#8a93a0" stroke-width="10" fill="none"></circle>
+      <circle cx="320" cy="240" r="73" stroke="#8a93a0" stroke-width="10" fill="none" transform="rotate(72 320 240)"></circle>
+      <circle cx="320" cy="240" r="73" stroke="#8a93a0" stroke-width="10" fill="none" transform="rotate(144 320 240)"></circle>
+      <circle cx="320" cy="240" r="73" stroke="#8a93a0" stroke-width="10" fill="none" transform="rotate(216 320 240)"></circle>
+      <circle cx="320" cy="240" r="73" stroke="#8a93a0" stroke-width="10" fill="none" transform="rotate(288 320 240)"></circle>
+      <circle cx="320" cy="240" r="166" stroke="#3a4150" stroke-width="5" fill="none"></circle>
+      <circle cx="320" cy="240" r="166" stroke="#3a4150" stroke-width="5" fill="none" transform="rotate(72 320 240)"></circle>
+      <circle cx="320" cy="240" r="166" stroke="#3a4150" stroke-width="5" fill="none" transform="rotate(144 320 240)"></circle>
+      <circle cx="320" cy="240" r="166" stroke="#3a4150" stroke-width="5" fill="none" transform="rotate(216 320 240)"></circle>
+      <circle cx="320" cy="240" r="166" stroke="#3a4150" stroke-width="5" fill="none" transform="rotate(288 320 240)"></circle>
+      <line x1="313" y1="60" x2="297" y2="169" stroke="#8a93a0" stroke-width="15" stroke-linecap="round"></line>
+      <line x1="313" y1="60" x2="297" y2="169" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(72 320 240)"></line>
+      <line x1="313" y1="60" x2="297" y2="169" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(144 320 240)"></line>
+      <line x1="313" y1="60" x2="297" y2="169" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(216 320 240)"></line>
+      <line x1="313" y1="60" x2="297" y2="169" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(288 320 240)"></line>
+      <line x1="326" y1="60" x2="340" y2="166" stroke="#8a93a0" stroke-width="15" stroke-linecap="round"></line>
+      <line x1="326" y1="60" x2="340" y2="166" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(72 320 240)"></line>
+      <line x1="326" y1="60" x2="340" y2="166" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(144 320 240)"></line>
+      <line x1="326" y1="60" x2="340" y2="166" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(216 320 240)"></line>
+      <line x1="326" y1="60" x2="340" y2="166" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(288 320 240)"></line>
+      <line x1="319" y1="64" x2="308" y2="157" stroke="#8a93a0" stroke-width="15" stroke-linecap="round"></line>
+      <line x1="319" y1="64" x2="308" y2="157" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(72 320 240)"></line>
+      <line x1="319" y1="64" x2="308" y2="157" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(144 320 240)"></line>
+      <line x1="319" y1="64" x2="308" y2="157" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(216 320 240)"></line>
+      <line x1="319" y1="64" x2="308" y2="157" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(288 320 240)"></line>
+      <line x1="320" y1="78" x2="319" y2="157" stroke="#8a93a0" stroke-width="15" stroke-linecap="round"></line>
+      <line x1="320" y1="78" x2="319" y2="157" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(72 320 240)"></line>
+      <line x1="320" y1="78" x2="319" y2="157" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(144 320 240)"></line>
+      <line x1="320" y1="78" x2="319" y2="157" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(216 320 240)"></line>
+      <line x1="320" y1="78" x2="319" y2="157" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(288 320 240)"></line>
+      <line x1="320" y1="79" x2="330" y2="161" stroke="#8a93a0" stroke-width="15" stroke-linecap="round"></line>
+      <line x1="320" y1="79" x2="330" y2="161" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(72 320 240)"></line>
+      <line x1="320" y1="79" x2="330" y2="161" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(144 320 240)"></line>
+      <line x1="320" y1="79" x2="330" y2="161" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(216 320 240)"></line>
+      <line x1="320" y1="79" x2="330" y2="161" stroke="#8a93a0" stroke-width="15" stroke-linecap="round" transform="rotate(288 320 240)"></line>
+      <line x1="304" y1="71" x2="291" y2="168" stroke="#3a4150" stroke-width="4" stroke-linecap="round"></line>
+      <line x1="304" y1="71" x2="291" y2="168" stroke="#3a4150" stroke-width="4" stroke-linecap="round" transform="rotate(72 320 240)"></line>
+      <line x1="304" y1="71" x2="291" y2="168" stroke="#3a4150" stroke-width="4" stroke-linecap="round" transform="rotate(144 320 240)"></line>
+      <line x1="304" y1="71" x2="291" y2="168" stroke="#3a4150" stroke-width="4" stroke-linecap="round" transform="rotate(216 320 240)"></line>
+      <line x1="304" y1="71" x2="291" y2="168" stroke="#3a4150" stroke-width="4" stroke-linecap="round" transform="rotate(288 320 240)"></line>
+      <line x1="335" y1="70" x2="349" y2="168" stroke="#3a4150" stroke-width="4" stroke-linecap="round"></line>
+      <line x1="335" y1="70" x2="349" y2="168" stroke="#3a4150" stroke-width="4" stroke-linecap="round" transform="rotate(72 320 240)"></line>
+      <line x1="335" y1="70" x2="349" y2="168" stroke="#3a4150" stroke-width="4" stroke-linecap="round" transform="rotate(144 320 240)"></line>
+      <line x1="335" y1="70" x2="349" y2="168" stroke="#3a4150" stroke-width="4" stroke-linecap="round" transform="rotate(216 320 240)"></line>
+      <line x1="335" y1="70" x2="349" y2="168" stroke="#3a4150" stroke-width="4" stroke-linecap="round" transform="rotate(288 320 240)"></line>
+      <circle cx="320" cy="240" r="70" stroke="#3a4150" stroke-width="6" fill="none"></circle>
+      <circle cx="320" cy="240" r="70" stroke="#3a4150" stroke-width="6" fill="none" transform="rotate(72 320 240)"></circle>
+      <circle cx="320" cy="240" r="70" stroke="#3a4150" stroke-width="6" fill="none" transform="rotate(144 320 240)"></circle>
+      <circle cx="320" cy="240" r="70" stroke="#3a4150" stroke-width="6" fill="none" transform="rotate(216 320 240)"></circle>
+      <circle cx="320" cy="240" r="70" stroke="#3a4150" stroke-width="6" fill="none" transform="rotate(288 320 240)"></circle>
+      <circle cx="320" cy="197" r="7" stroke="#15161a" stroke-width="6" fill="none"></circle>
+      <circle cx="320" cy="197" r="7" stroke="#15161a" stroke-width="6" fill="none" transform="rotate(72 320 240)"></circle>
+      <circle cx="320" cy="197" r="7" stroke="#15161a" stroke-width="6" fill="none" transform="rotate(144 320 240)"></circle>
+      <circle cx="320" cy="197" r="7" stroke="#15161a" stroke-width="6" fill="none" transform="rotate(216 320 240)"></circle>
+      <circle cx="320" cy="197" r="7" stroke="#15161a" stroke-width="6" fill="none" transform="rotate(288 320 240)"></circle>
     </g>
   </g>
-</g><circle cx="320" cy="240" r="208" stroke="#262626" stroke-width="32" fill="none"></circle><circle cx="320" cy="240" r="208" stroke="#262626" stroke-width="32" fill="none" transform="rotate(72 320 240)"></circle><circle cx="320" cy="240" r="208" stroke="#262626" stroke-width="32" fill="none" transform="rotate(144 320 240)"></circle><circle cx="320" cy="240" r="208" stroke="#262626" stroke-width="32" fill="none" transform="rotate(216 320 240)"></circle><circle cx="320" cy="240" r="208" stroke="#262626" stroke-width="32" fill="none" transform="rotate(288 320 240)"></circle><circle cx="320" cy="240" r="178" stroke="#e0a85c" stroke-width="17" fill="none"></circle><circle cx="320" cy="240" r="178" stroke="#e0a85c" stroke-width="17" fill="none" transform="rotate(72 320 240)"></circle><circle cx="320" cy="240" r="178" stroke="#e0a85c" stroke-width="17" fill="none" transform="rotate(144 320 240)"></circle><circle cx="320" cy="240" r="178" stroke="#e0a85c" stroke-width="17" fill="none" transform="rotate(216 320 240)"></circle><circle cx="320" cy="240" r="178" stroke="#e0a85c" stroke-width="17" fill="none" transform="rotate(288 320 240)"></circle>
+</g><circle cx="320" cy="240" r="208" stroke="#1d2230" stroke-width="32" fill="none"></circle><circle cx="320" cy="240" r="208" stroke="#1d2230" stroke-width="32" fill="none" transform="rotate(72 320 240)"></circle><circle cx="320" cy="240" r="208" stroke="#1d2230" stroke-width="32" fill="none" transform="rotate(144 320 240)"></circle><circle cx="320" cy="240" r="208" stroke="#1d2230" stroke-width="32" fill="none" transform="rotate(216 320 240)"></circle><circle cx="320" cy="240" r="208" stroke="#1d2230" stroke-width="32" fill="none" transform="rotate(288 320 240)"></circle><circle cx="320" cy="240" r="178" stroke="#8a93a0" stroke-width="17" fill="none"></circle><circle cx="320" cy="240" r="178" stroke="#8a93a0" stroke-width="17" fill="none" transform="rotate(72 320 240)"></circle><circle cx="320" cy="240" r="178" stroke="#8a93a0" stroke-width="17" fill="none" transform="rotate(144 320 240)"></circle><circle cx="320" cy="240" r="178" stroke="#8a93a0" stroke-width="17" fill="none" transform="rotate(216 320 240)"></circle><circle cx="320" cy="240" r="178" stroke="#8a93a0" stroke-width="17" fill="none" transform="rotate(288 320 240)"></circle>
       </g>
     </g>
   </g>
@@ -626,9 +628,9 @@ footer{border-top:2px solid var(--ink);padding:30px 0;font-family:var(--font-mon
       </div>
       <div class="form reveal">
         <label>Name</label>
-        <input type="text" id="cName" placeholder="Anu Nimas">
+        <input type="text" id="cName" placeholder="Your name">
         <label>Email</label>
-        <input type="email" id="cEmail" placeholder="anu.nimas@email.com">
+        <input type="email" id="cEmail" placeholder="you@company.com">
         <label>Message</label>
         <textarea rows="4" id="cMsg" placeholder="Tell me about the role or project..."></textarea>
         <button class="btn btn-primary" id="sendBtn">SEND MESSAGE →</button>
@@ -657,6 +659,7 @@ footer{border-top:2px solid var(--ink);padding:30px 0;font-family:var(--font-mon
     </div>
     <div class="lb-foot">
       <div class="lb-dots" id="lbDots"></div>
+      <span class="lb-note" id="lbNote"></span>
       <span class="lb-count" id="lbCount"></span>
     </div>
   </div>
@@ -695,13 +698,13 @@ document.getElementById('sendBtn').addEventListener('click',()=>{
     "multilink": { title:"Multi-link Driven Rear Suspension", cat:"Suspension · CATIA", images:["images/multilink-1.jpg", "images/multilink-2.jpg", "images/multilink-3.jpg", "images/multilink-4.jpg", "images/multilink-5.jpg", "images/multilink-6.jpg", "images/multilink-7.jpg", "images/multilink-8.jpg", "images/multilink-9.jpg", "images/multilink-10.jpg", "images/multilink-11.jpg", "images/multilink-12.jpg", "images/multilink-13.jpg", "images/multilink-14.jpg"] },
     "livery": { title:"CR18 Livery Design", cat:"Design · Branding", images:["images/livery-1.jpg", "images/livery-2.jpg", "images/livery-3.jpg", "images/livery-4.jpg", "images/livery-5.jpg", "images/livery-6.jpg"] },
     "brake-abs": { title:"Brake Hydraulics Model — ABS & ESP", cat:"Bachelor Thesis · Control Systems", images:["images/brake-abs-1.jpg", "images/brake-abs-2.jpg", "images/brake-abs-3.jpg", "images/brake-abs-4.jpg", "images/brake-abs-5.jpg", "images/brake-abs-6.jpg", "images/brake-abs-7.jpg", "images/brake-abs-8.jpg"] },
-    "workshop": { title:"Racecar Fundamentals Workshop", cat:"Outreach · Workshop", images:[] },
-    "kirloskar": { title:"Kirloskar Diesel Engine Servicing", cat:"Internship · IC Engines", images:[] },
-    "cvt": { title:"Composite CVT Casing", cat:"Composites · Fabrication", images:[] },
-    "cfrp": { title:"CFRP Component Production", cat:"Composites · Production", images:[] },
+    "workshop": { title:"Racecar Fundamentals Workshop", cat:"Outreach · Workshop", images:["images/workshop-1.png"], note:"Conceptual illustration — AI-generated representation." },
+    "kirloskar": { title:"Kirloskar Diesel Engine Servicing", cat:"Internship · IC Engines", images:["images/kirloskar-1.png"], note:"Conceptual illustration — AI-generated representation." },
+    "cvt": { title:"Composite CVT Casing", cat:"Composites · Fabrication", images:["images/cvt-1.png"], note:"Conceptual illustration — AI-generated representation." },
+    "cfrp": { title:"CFRP Component Production", cat:"Composites · Production", images:["images/cfrp-1.png"], note:"Conceptual illustration — AI-generated representation." },
     "camber": { title:"Vehicle Dynamics Lead — Camber Racing", cat:"Formula Student · Leadership", images:["images/camber-1.jpg", "images/camber-2.jpg", "images/camber-3.jpg", "images/camber-4.jpg", "images/camber-5.jpg", "images/camber-6.jpg", "images/camber-7.jpg", "images/camber-8.jpg", "images/camber-9.jpg", "images/camber-10.jpg", "images/camber-11.jpg", "images/camber-12.jpg", "images/camber-13.jpg", "images/camber-14.jpg"] },
     "sae-prototype": { title:"Spherical-Wheel Vehicle Concept", cat:"SAE India · Award Winner", images:["images/sae-prototype-1.jpg", "images/sae-prototype-2.jpg", "images/sae-prototype-3.jpg", "images/sae-prototype-4.jpg"] },
-    "steam-engine": { title:"Prototype Steam Engine", cat:"Mechanisms · Build", images:[] },
+    "steam-engine": { title:"Prototype Steam Engine", cat:"Mechanisms · Build", images:["images/steam-engine-1.png"], note:"Conceptual illustration — AI-generated representation." },
   };
 
   const lb=document.getElementById('lightbox');
@@ -711,6 +714,7 @@ document.getElementById('sendBtn').addEventListener('click',()=>{
   const lbCat=document.getElementById('lbCat');
   const lbDots=document.getElementById('lbDots');
   const lbCount=document.getElementById('lbCount');
+  const lbNote=document.getElementById('lbNote');
   const lbPrev=document.getElementById('lbPrev');
   const lbNext=document.getElementById('lbNext');
   const lbClose=document.getElementById('lbClose');
@@ -726,6 +730,7 @@ document.getElementById('sendBtn').addEventListener('click',()=>{
     lbCount.textContent='';
     if(!hasImgs){
       lbEmpty.textContent='No images added yet. Add file paths for this project in the PROJECT_IMAGES list inside index.html.';
+      if(lbNote)lbNote.textContent='';
       return;
     }
     lbImg.src=current[idx];
@@ -745,6 +750,7 @@ document.getElementById('sendBtn').addEventListener('click',()=>{
     current=data.images||[]; idx=0;
     lbTitle.textContent=data.title;
     lbCat.textContent=data.cat;
+    if(lbNote)lbNote.textContent=data.note||'';
     render();
     lb.classList.add('open');
     document.body.style.overflow='hidden';
