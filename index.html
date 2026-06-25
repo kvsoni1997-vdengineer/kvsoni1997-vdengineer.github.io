@@ -171,14 +171,15 @@ section{padding:74px 0;position:relative}
 .lb-arrow:hover{transform:translateY(-50%) scale(1.06);box-shadow:3px 3px 0 var(--ink)}
 .lb-prev{left:16px}
 .lb-next{right:16px}
-.lb-foot{padding:14px 20px;border-top:2px solid var(--ink);background:var(--paper);display:flex;align-items:center;justify-content:center;gap:10px}
+.lb-foot{padding:12px 20px;border-top:2px solid var(--ink);background:var(--paper);display:flex;flex-direction:column;gap:8px}
+.lb-foot-row{display:flex;align-items:center;justify-content:center;gap:10px;position:relative;min-height:14px}
 .lb-dots{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 .lb-dot{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink);background:var(--bg);cursor:pointer;padding:0;transition:background .2s}
 .lb-dot.active{background:var(--blue)}
-.lb-count{font-family:var(--font-mono);font-size:.78rem;color:#6a6b72;margin-left:auto;position:absolute;right:20px}
-.lb-note{font-size:.76rem;font-style:italic;color:#8a8b92;position:absolute;left:20px;max-width:60%;text-align:left;line-height:1.3}
+.lb-count{font-family:var(--font-mono);font-size:.78rem;color:#6a6b72;position:absolute;right:0}
+.lb-note{font-size:.76rem;font-style:italic;color:#8a8b92;text-align:left;line-height:1.3;width:100%}
 .lb-note:empty{display:none}
-@media(max-width:760px){.lb-arrow{width:38px;height:38px}.lb-stage img{max-height:55vh}.lb-note{position:static;max-width:100%;text-align:center;margin-top:6px;order:3;flex-basis:100%}.lb-count{position:static;margin-left:0}}
+@media(max-width:760px){.lb-arrow{width:38px;height:38px}.lb-stage img{max-height:55vh}.lb-note{text-align:center}}
 .proj:nth-child(4n+1) .proj-top{background:linear-gradient(135deg,var(--blue),#0a3fa8)}
 .proj:nth-child(4n+2) .proj-top{background:linear-gradient(135deg,var(--orange),#c13a12)}
 .proj:nth-child(4n+3) .proj-top{background:linear-gradient(135deg,var(--green),#0d6b43)}
@@ -658,9 +659,11 @@ footer{border-top:2px solid var(--ink);padding:30px 0;font-family:var(--font-mon
       <button class="lb-arrow lb-next" id="lbNext" aria-label="Next image">›</button>
     </div>
     <div class="lb-foot">
-      <div class="lb-dots" id="lbDots"></div>
+      <div class="lb-foot-row">
+        <div class="lb-dots" id="lbDots"></div>
+        <span class="lb-count" id="lbCount"></span>
+      </div>
       <span class="lb-note" id="lbNote"></span>
-      <span class="lb-count" id="lbCount"></span>
     </div>
   </div>
 </div>
